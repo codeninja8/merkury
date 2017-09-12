@@ -1,0 +1,120 @@
+=transition($content)
+  transition: $content
+  -webkit-transition: $content
+  -moz-transition: $content
+  -o-transition: $content
+
+=transform($content)
+  -webkit-transform: ($content)
+  -moz-transform: ($content)
+  -ms-transform: ($content)
+  -o-transform: ($content)
+  transform: ($content)
+
+=border-radius($radius)
+  border-radius: $radius
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  -o-border-radius: $radius
+
+=border-radius-side($radius, $side )
+  @if $side == top
+    -webkit-border-top-right-radius: $radius
+    border-top-right-radius: $radius
+    -webkit-border-top-left-radius: $radius
+    border-top-left-radius: $radius
+    background-clip: padding-box
+  @else if $side == left
+    -webkit-border-bottom-left-radius: $radius
+    border-bottom-left-radius: $radius
+    -webkit-border-top-left-radius: $radius
+    border-top-left-radius: $radius
+    background-clip: padding-box
+  @else if $side == right
+    -webkit-border-bottom-right-radius: $radius
+    border-bottom-right-radius: $radius
+    -webkit-border-top-right-radius: $radius
+    border-top-right-radius: $radius
+    background-clip: padding-box
+  @else
+    -webkit-border-bottom-right-radius: $radius
+    border-bottom-right-radius: $radius
+    -webkit-border-bottom-left-radius: $radius
+    border-bottom-left-radius: $radius
+    background-clip: padding-box
+
+=box-sizing($box-model)
+  -webkit-box-sizing: $box-model // Safari <= 5
+  -moz-box-sizing: $box-model // Firefox <= 19
+  box-sizing: $box-model
+
+=placeholder($content)
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=animation($content)
+  -webkit-animation: $content
+  -o-animation: $content
+  animation: $content
+
+=animation-delay($delay)
+  -webkit-animation-delay: $delay
+  -moz-animation-delay: $delay
+  -o-animation-delay: $delay
+  animation-delay: $delay
+
+=b-shadow($values)
+  -webkit-box-shadow: $values
+  -moz-box-shadow: $values
+  box-shadow: $values
+
+=keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content
+  @-moz-keyframes #{$animationName}
+    @content
+  @-o-keyframes #{$animationName}
+    @content
+  @keyframes #{$animationName}
+    @content
+
+
+//media queries
+=large-up
+  @media #{$large-and-up}
+    @content
+
+=phone
+  @media only screen and (min-width: 768px)
+    @content
+
+=descktop-hover
+  @media only screen and (min-width: 768px)
+    &:hover
+      @content
+
+=resp-min($min-breakpoint)
+  @media only screen and (min-width: $min-breakpoint)
+    @content
+
+=resp-max($max-breakpoint)
+  @media only screen and (max-width: $max-breakpoint)
+    @content
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,685 @@
+#page-home
+  background-color: $bgClr
+  +resp-max(1024px)
+    font-size: 14px
+  +resp-max(425px)
+    font-size: 12px
+  header
+    background-image: url(../images/temp/bg-header.jpg)
+    margin-bottom: 135px
+    padding: 70px 0 580px
+    +resp-max(992px)
+      padding-bottom: 100px
+      margin-bottom: 60px
+    +resp-max(768px)
+      padding-top: 30px
+    
+    nav
+      +b-shadow(none)
+      background-color: transparent
+      +resp-max(768px)
+        margin-bottom: 50px
+      i
+        &.material-icons
+          font-size: 3em
+
+    .main-nav
+      padding-top: 10px
+    .nav-wrapper
+      +resp-max(1714px)
+        padding: 0 25px
+      +resp-max(768px)
+        padding: 0
+
+    .header_container
+      +large-up
+        width: 100%
+      max-width: 1680px
+
+    .brand-logo
+      +resp-max(768px)
+        top: 50px
+
+
+  .header_section
+    padding-top: 130px
+
+  .header_section--link
+    @extend %page-link
+    border: 1px solid $mainIconsClr
+    z-index: 1
+    overflow: hidden
+    +resp-max(425px)
+      width: 170px
+    +descktop-hover
+      background: transparent
+      &:after
+        height: 600% !important
+        opacity: 1
+    &:after
+      opacity: 0
+      background-image: -webkit-linear-gradient( transparent 50%, rgba(85, 132, 255, 0.25) 50%)
+      background-image: -moz-linear-gradient(transparent 50%, rgba(85, 132, 255, 0.25) 50%)
+      background-size: 10px 10px
+      position: absolute
+      height: 0
+      left: 50%
+      top: 50%
+      width: 150%
+      z-index: -1
+      +transition(all 0.75s ease 0s)
+      +transform(translateX(-50%) translateY(-50%) rotate(-25deg))
+
+  .header_img-outer
+    bottom: -135px
+    left: 0
+    right: 0
+
+  .menu_item
+    padding: 0
+    margin-right: 60px
+    &:last-of-type
+      margin-right: 0
+    +descktop-hover
+      &:after
+        width: 100%
+    &:after
+      +transition(width 0.3s ease)
+      content: ''
+      display: block
+      background: $white
+      height: 1px
+      left: 0
+      position: absolute
+      bottom: 0
+      width: 0
+    & > a
+      padding: 0
+      line-height: 50px
+
+  .menu_item--login
+    +descktop-hover
+      & > a
+        border-color: transparent
+        color: $white
+      &:before
+        +animation(none)
+    & > a
+      +border-radius(25px)
+      +transition(color 0.3s ease-in)
+      border: 1px solid $mainIconsClr
+      height: 50px
+      color: $mainIconsClr
+      padding: 0 45px
+
+    &:before
+      +animation(shine 1.5s linear infinite)
+      display: block
+      width: 0
+      height: 86%
+      position: absolute
+      top: 7%
+      left: 0%
+      opacity: 0
+      background: white
+      +b-shadow(0 0 15px 3px transparentize($white, 0.5))
+      +transform(skewX(-10deg))
+
+      +keyframes(shine)
+        0%
+          opacity: 0
+          left: 0%
+        25%
+          opacity: 1
+        50%
+          opacity: 0
+          left: 100%
+        100%
+          opacity: 0
+          left: 0%
+
+  .header_section--title
+    margin: 0 0 18px
+
+  .header_section--subtitle
+    margin: 0 0 80px
+    
+  .features-wrapper
+    .features-container
+      max-width: 1340px
+      +resp-max(1620px)
+        padding-top: 0
+      +large-up
+        width: 100%
+
+  .features-wrapper_top
+    margin: 0 0 220px
+    padding-top: 120px
+    +resp-max(1260px)
+      padding-left: 25px
+      padding-right: 25px
+    +resp-max(1140px)
+      margin-bottom: 160px
+    +resp-max(1060px)
+      flex-direction: column
+      padding-top: 20px
+      margin-bottom: 140px
+    +resp-max(992px)
+      margin-bottom: 120px
+
+  .features-wrapper_top_items
+    max-width: 502px
+    +resp-max(1060px)
+      max-width: 100%
+      padding: 30px 0
+      &:last-of-type
+        padding-bottom: 0
+    .material-icons
+      color: $mainIconsClr
+      font-size: 70px
+      margin-bottom: 70px
+
+  .features-wrapper_top_items--border
+    border-top: 1px solid $txtSecondaryClrOpac70
+    margin-top: 44px
+    width: 220px
+    +resp-max(1060px)
+      width: 100%
+
+  .features-wrapper_top_info
+    margin: 0 0 52px
+
+  .features-wrapper_top_subtitles
+    margin: 0 0 25px
+
+  .features-wrapper_top_links
+    @extend %page-link
+    width: 250px
+    border: 1px solid $txtSecondaryClrOpac70
+    overflow: hidden
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+    -ms-backface-visibility: hidden
+    backface-visibility: hidden
+    +transition(border 0.3s ease)
+    +descktop-hover
+      & > span
+        +transform(translateX(220%))
+      &:before
+        left: 0
+    +resp-max(425px)
+      width: 170px
+    &:before
+      content: "\e5d3"
+      display: flex
+      align-items: center
+      font-family: "Material Icons"
+      font-size: 35px
+      justify-content: center
+      left: -100%
+      position: absolute
+      height: 100%
+      top: 0
+      width: 100%
+      +transition(left 0.3s ease)
+
+    & > span
+      -webkit-backface-visibility: hidden
+      -moz-backface-visibility: hidden
+      -ms-backface-visibility: hidden
+      backface-visibility: hidden
+      +transition(all 0.3s ease)
+
+  .features-wrapper_bottom
+    background: url(../images/temp/tablet.png) right top no-repeat
+    +resp-max(1660px)
+      background-size: 850px
+    +resp-max(1450px)
+      background-size: 700px
+    +resp-max(1350px)
+      background-image: none
+
+    .features-container
+      max-width: 1590px
+      padding: 70px 0 170px
+      +resp-max(1450px)
+        padding-top: 0
+      +resp-max(1450px)
+        padding-bottom: 120px
+
+      .features-container_inner
+        max-width: 655px
+        +resp-max(1660px)
+          padding-left: 25px
+        +resp-max(1350px)
+          max-width: 100%
+          padding-left: 0
+          text-align: center
+
+    .features-wrapper_bottom_title
+      margin: 0 0 44px
+      +resp-max(1450px)
+        margin-bottom: 24px
+      +resp-max(1060px)
+        padding-top: 20px
+        position: relative
+        &:before
+          content: ''
+          border: 1px solid $txtSecondaryClrOpac70
+          margin: 0 auto
+          position: absolute
+          left: 0
+          right: 0
+          top: 0
+          max-width: 300px
+
+    .features-wrapper_bottom_info
+      margin: 0 0 36px
+      padding-right: 68px
+      &:last-of-type
+          margin: 0 0 55px
+      +resp-max(1450px)
+        margin-bottom: 16px
+        padding-right: 0
+      +resp-max(1420)
+      margin-bottom: 35px
+
+    .check-wrapper
+      margin: 0
+      +resp-max(1450px)
+        margin-bottom: 10px
+      .check-wrapper-items
+        margin-bottom: 30px
+        +resp-max(1450px)
+          margin-bottom: 10px
+        &:before
+          +border-radius(50%)
+          border: 3px solid $mainIconsClr
+          color: $mainIconsClr
+          content: '\2714'
+          display: inline-block
+          font-size: 16px
+          height: 28px
+          margin-right: 20px
+          text-align: center
+          width: 28px
+        &:last-of-type
+          margin-bottom: 0
+
+  .drag-drop-wrapper
+    background-image: url(../images/temp/bg-header.jpg)
+    padding: 152px 140px 200px
+    +resp-max(1620px)
+      flex-direction: column
+    +resp-max(1260px)
+      padding-left: 25px
+      padding-right: 25px
+    +resp-max(992px)
+      padding-top: 80px
+    +resp-max(1060px)
+      padding-bottom: 130px
+    .drag-drop-wrapper_outer
+      +resp-max(700px)
+        flex-direction: column
+        align-items: center
+
+    .drag-drop-wrapper_inner
+      width: 395px
+      +resp-max(400px)
+        width: 305px
+
+    .drag-drop-progress
+      margin-right: 44px
+      +resp-max(700px)
+        margin-right: 0
+        margin-bottom: 50px
+
+    .drag-drop-completed
+      margin-right: 174px
+      +resp-max(1620px)
+        margin-right: 0
+
+    .drag-drop-wrapper_title-outer
+      margin-bottom: 24px
+      .fa
+        color: $txtSecondaryClr
+      .drag-drop-wrapper_title_order
+        color: $txtSecondaryClr
+
+    .drag-drop-wrapper_list
+      padding-left: 5px
+      .drag-drop-wrapper_list_items--drop
+        border: 1px dashed $txtSecondaryClr
+        color: $txtSecondaryClr
+      .drag-drop-wrapper_list_items
+        background-color: $white
+        cursor: url(../images/temp/hand.png), auto
+        margin-bottom: 15px
+        min-height: 98px
+        padding: 0 30px
+        &:last-of-type
+          margin-bottom: 0
+        .fa
+          color: $txtSecondaryClr
+        .drag-drop-wrapper_list_items_letter
+          @extend %circul-btns
+          background-color: $mainIconsClr
+          margin-right: 20px
+      .drag-drop-wrapper_list_items_days
+        line-height: 2
+        &:before
+          content: '\f017'
+          display: inline-block
+          font-family: 'FontAwesome'
+          margin-right: 3px
+
+    .drag-drop-wrapper_section
+      max-width: 505px
+      padding-top: 62px
+      +resp-max(1620px)
+        max-width: 100%
+        text-align: center
+      +resp-max(1620px)
+        padding-top: 102px
+
+    .prev-next-outer
+      +resp-max(1620px)
+        justify-content: center
+
+    .drag-drop-wrapper_section_title
+      margin: 0 0 40px
+
+    .drag-drop-wrapper_section_info
+      margin: 0 0 40px
+      &:last-of-type
+        margin-bottom: 48px
+
+    .prev-next-btns
+      @extend %circul-btns
+      border: 1px solid $txtSecondaryClr
+      color: $txtSecondaryClr
+      margin-right: 20px
+      +transition(all 0.3s ease)
+      &:last-of-type
+        margin-right: 0
+      +descktop-hover
+        +b-shadow(0 2px 5px #9DAED0)
+        +transform(scale(0.9))
+
+      .fa
+        font-size: 20px
+
+  .offers-wrapper
+    padding: 96px 0
+    .offers-wrapper_container
+      +large-up
+        width: 100%
+      max-width: 1388px
+    .offers-wrapper_description
+      max-width: 1008px
+      margin-bottom: 80px
+      .offers-wrapper_title
+        margin: 0 0 40px
+      .offers-wrapper_info
+        line-height: 1.7
+
+    .offers-wrapper_middle-container
+      background: url(../images/temp/bg-offers.png) center top no-repeat
+      flex-direction: column
+      justify-content: space-around
+      min-height: 588px
+      +resp-max(1140px)
+        background-size: 1040px
+      +resp-max(1000px)
+        background-image: none
+        min-height: 0
+        max-width: 770px
+        margin: 0 auto
+
+      .infos
+        padding-top: 35px
+        +resp-max(1450px)
+          padding-left: 25px
+        +resp-max(1450px)
+          padding-top: 0
+        +resp-max(1000px)
+          display: flex
+          flex-direction: column
+          align-self: flex-start
+        +resp-max(992px)
+          margin-bottom: 30px
+          &:last-of-type
+            margin-bottom: 0
+
+        .descriptions
+          width: 248px
+          +resp-max(1000px)
+            align-self: flex-start
+
+        .subtitles
+          border-bottom: 2px solid $mainIconsClr
+          margin: 0 0 24px
+          padding-bottom: 15px
+          width: 672px
+          +resp-max(1260px)
+            width: 420px
+          +resp-max(510px)
+            width: 320px
+          +resp-max(400px)
+            width: 100%
+
+          .circles
+            +border-radius(50%)
+            border: 8px solid $circulesOuterClr
+            background-color: $mainIconsClr
+            +b-shadow(0 0 0 1em rgba(#fff, 0))
+            height: 45px
+            right: 0
+            top: 20px
+            width: 45px
+            animation: pulse 1s infinite
+            +keyframes(pulse)
+              0%
+                +b-shadow(0 0 0 0 $circulesOuterClr)
+
+            +resp-max(510px)
+              display: none
+
+      .infos--right
+        align-self: flex-end
+        flex-flow: column
+        +resp-max(1450px)
+          padding-left: 0
+          padding-right: 25px
+        +resp-max(1000px)
+          padding-top: 0
+        .descriptions
+          align-self: flex-end
+          +resp-max(1000px)
+            align-self: flex-end
+        .circles
+          left: 0
+          right: auto
+  .pricing-wrapper
+    padding-top: 212px
+    +resp-max(1140px)
+      padding-top: 70px
+
+  .pricing-wrapper_title
+    margin: 0 0 92px
+
+  .pricing-wrapper_list
+    margin: 0 0 104px
+    padding: 0 14px
+    +resp-max(1140px)
+      flex-direction: column
+      padding-top: 0
+    li
+      +b-shadow(5px 5px 10px 0px rgba(214,214,214,1))
+      background-color: #fff
+      padding: 45px 56px
+      +resp-max(1140px)
+        padding-left: 50px
+        padding-right: 50px
+        text-align: center
+        max-width: 350px
+        margin: 0 auto 50px
+        &:last-of-type
+          margin-bottom: 0
+      +resp-max(375px)
+        padding-left: 30px
+        padding-right: 30px
+
+      .subtitles
+        margin: 0 0 44px
+      .prices
+        line-height: 1
+        margin: 0 0 44px
+    form
+      input[type="checkbox"] + label
+        font-size:  1.125em
+      .input-outer
+        margin-bottom: 15px
+        &:last-of-type
+          margin-bottom: 0
+      input[type="checkbox"] + label:before
+        +border-radius(50%)
+        align-items: center
+        border-color: $iconDeleteClr
+        display: flex
+        content: '\2716'
+        color: $iconDeleteClr
+        height: 24px
+        justify-content: center
+        width: 24px
+
+      input[type="checkbox"]:checked + label:before
+        +transform(none)
+        border-color: $mainIconsClr
+        content: '\2714'
+        color: $mainIconsClr
+        left: 0
+        top: 0
+
+  .pricing-wrapper_info
+    max-width: 900px
+    margin: 0 auto 65px
+
+  .link-dividers
+    max-width: 715px
+
+    .divider
+      width: 230px
+      +resp-max(795px)
+        width: 130px
+      +resp-max(520px)
+        width: 80px
+      +resp-max(425px)
+        display: none
+
+    .header_section--link
+      +descktop-hover
+        color: $mainIconsClr
+
+  footer
+    padding: 64px 0
+    background-color: $bgFooterClr
+    +resp-max(768px)
+      padding: 34px 0
+    .footer-container
+      max-width: 1470px
+      +large-up
+        width: 100%
+      +resp-max(1490px)
+        padding: 0 25px
+      +resp-max(980px)
+        flex-direction: column-reverse
+        align-items: center
+
+      .footer_menu
+        margin-right: 50px
+        +resp-max(980px)
+          margin-right: 30px
+
+      .footer_menu_items
+        margin-right: 54px
+        +resp-max(980px)
+          margin-right: 34px
+        &:last-of-type
+          margin-right: 0
+        & > a
+          padding: 15px
+          z-index: 1
+          +transition(all 2s)
+          +resp-max(410px)
+            padding-left: 0
+            padding-right: 0
+          &:after
+            +border-radius(3px)
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            margin: auto
+            width: 0
+            content: '.'
+            color: transparent
+            background: $txtSecondaryClr
+            height: 1px
+            +transition(all .5s)
+          +descktop-hover
+            color: $bgFooterClr
+            font-weight: bold
+            &:after
+              z-index: -10
+              opacity: 1
+              +animation(fill 1s forwards)
+              +keyframes(fill)
+                0%
+                  width: 0
+                  height: 1px
+                50%
+                  width: 100%
+                  height: 1px
+                100%
+                  width: 100%
+                  height: 100%
+                  background: $txtSecondaryClr
+
+  .footer_social-list
+    margin-top: -3px
+  .footer_social-list_items
+    margin-right: 10px
+    & > a
+      background-color: transparent
+      width: 20px
+      height: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 15px
+      +transition(all .5s ease)
+      +transform(scale(1.25))
+      +resp-max(410px)
+        padding-left: 0
+        padding-right: 0
+
+    &:last-of-type
+      margin-right: 0
+    +descktop-hover
+      +border-radius(50%)
+      background-color: $txtSecondaryClr
+      .fa
+        color: $bgFooterClr
+        +transform(scale(1.25))
+
+    .fa
+      color: $txtSecondaryClr
+      +transition(all .5s ease)
+
+  .copiright-info
+    +resp-max(980px)
+      padding-top: 30px
+
+
+
